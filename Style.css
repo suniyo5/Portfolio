@@ -1,0 +1,111 @@
+*{ 
+    padding: 0%;
+   margin: 0%;
+   font-family:sans-serif;
+}
+body{
+    background-color: #080808;
+    color:white;
+}
+
+#header{
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    background-size: 10px;
+    background-position: center;
+    align-items: center;
+    }
+.container{
+    padding-left: 50px ;
+    height: 20 px;
+    padding-right: 10%;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+nav ul li {
+    display: inline;
+    margin-left: 10px ;
+    margin-right: 20 px;
+    list-style: none;
+}
+
+nav ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content:'';
+    width: 0%;
+    height: 4px;
+    background: #ff004f;
+    position:absolute;
+    left: 0;
+    bottom: -8px;
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+    
+}
+.header-text h1{
+    font-size: 30px;
+    margin-top: 20 px;
+
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+.logo{
+    width: 200 px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/*=========About===========*/
+#about{
+    padding: 80 px;
+    color: #ababab;
+}
+.row{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+
+}
+.about-col-1 imag {
+    width: 100px; /* Set a fixed width */
+    flex: 0 1 100px; /* For flexbox: allows shrinking to 100px */
+    max-width: 100px; /* Prevents the column from exceeding this width */
+    border-radius: 12%;
+    
+    border-radius: 1px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+font-size: 60px;
+font-weight: 600;
+color:#fff
+}
+.tab-titles{
+    display:flex;
+    
+}
