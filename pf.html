@@ -3,55 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="Style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Uvashi's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <svg id="blobs-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;">
+        <ellipse id="blob1" cx="30%" cy="40%" rx="180" ry="120" fill="#FFC0CB" opacity="0.5"/>
+        <ellipse id="blob2" cx="70%" cy="60%" rx="140" ry="90" fill="#FFD580" opacity="0.4"/>
+      </svg>
+      <script>
+      function animateBlob(id, baseCx, baseCy, rx, ry, speed, phase) {
+        let t = 0;
+        setInterval(() => {
+          t += 0.02;
+          const el = document.getElementById(id);
+          el.setAttribute('cx', baseCx + Math.sin(t * speed + phase) * 30 + '%');
+          el.setAttribute('cy', baseCy + Math.cos(t * speed + phase) * 20 + '%');
+          el.setAttribute('rx', rx + Math.sin(t * speed + phase) * 10);
+          el.setAttribute('ry', ry + Math.cos(t * speed + phase) * 7);
+        }, 30);
+      }
+      animateBlob('blob1', 30, 40, 180, 120, 0.7, 0);
+      animateBlob('blob2', 70, 60, 140, 90, 0.5, Math.PI);
+      </script>
 </head>
 <body>
-    <div id="header">
-        <div class="center">
-            <nav>
-                <ul>
-                    <img src="https://i.pinimg.com/736x/7e/a3/44/7ea34424525e879f10681ed99f30ba7b.jpg" alt="" class="w-48 h-auto rounded-lg" height="100" >
-                    <li> <a href="#">Home</a></li>
-                    <li> <a href="#">About me</a></li>
-                    <li> <a href="#">Portfolio</a></li>
-                    <li> <a href="#">Contact us</a></li>
-                </ul>
-            </nav>
-            <div class="header-text">
-               <B> <p>Developer </p></B>
-                <h1>Hii, I'm <span>Urvashi </span></br> Pandey </h1>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Urvashi</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#">Contact Us</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Skills</a>
+                <a href="">Services</a>
+                <a href="">Blogs</a>
+                <a href="">Contact Us</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
-    </div>
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="desktop\photos\bg.jpg" height="500" width="445">
+    </nav>
+        <section>
+            <div class="main-container">
+                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                    <img src="urvi-logo__1_-removebg-preview (1).png" alt="" >
+                </div>
+                <div class="content">
+                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Urvashi</span></h1>
+                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">As a focused 3rd-year BCA student, I specialize in Java, Python, and web development. 
+                        My passion for emerging technologies drives me to consistently deliver innovative solutions with a results-driven
+                         approach. I have hands-on experience building responsive web applications and optimizing database performance. Thriving in collaborative environments, I am always ready to take on new 
+                         technical challenges and committed to continuous advancement in the tech industry.
+                        </p>
+                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                        <a href="#" ><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                    <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                        <button>Download CV</button>
+                    </div>
+                </div>
             </div>
-           <div class="about-col-2">
-            <h1 class="sub-title">About Me </h1>
-            <p> I am a passionate and driven Bachelor of Computer Applications (BCA) student, currently in my third year of studies. With a keen interest in technology and programming, I am dedicated to expanding my knowledge and skills in various programming languages, including \[mention specific languages, e.g., Python, Java, JavaScript, etc.]. Beyond academics, I enjoy exploring new technologies, working on projects that challenge my creativity, and staying updated with the latest trends in the tech world. I am also enthusiastic about problem-solving and enjoy collaborating with others to bring innovative ideas to life. When I’m not coding, I love indulging in hobbies like \[mention hobbies, e.g., reading, gaming, photography], which help me stay inspired and balanced. My goal is to continuously learn, grow, and contribute meaningfully to the tech community.
-            </p></hr></br>
-        
-            <div class="tab-title">
-            <p class="tab-title active-link">Skills</p>
-            <p class="tab-title">Experience</p>
-            <p class="tab-title">Education</p>
-
-        </div>
-        <div class="tab-contents">
-            <ul>
-                <li><span></span></br></li>
-                <li><span></span></br></li>
-                <li><span></span></br></li>
-
-            </ul>
-        </div>
-        </div>
-    </div>
-</div>
+        </section>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
 </body>
 </html>
